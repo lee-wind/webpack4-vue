@@ -1,0 +1,19 @@
+npm init -y
+
+npm install webpack webpack-cli style-loader css-loader file-loader url-loader
+html-loader html-webpack-plugin clean-webpack-plugin
+webpack-dev-server webpack-merge mini-css-extract-plugin
+babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime
+babel-plugin-transform-remove-console optimize-css-assets-webpack-plugin
+postcss-loader postcss-preset-env purify-css purifycss-webpack
+vue-loader vue-template-compiler vue-style-loader
+--save-dev
+
+npm install webpack webpack-cli
+
+cnpm install style-loader css-loader file-loader url-loader html-loader html-webpack-plugin clean-webpack-plugin webpack-dev-server webpack-merge mini-css-extract-plugin babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-transform-remove-console optimize-css-assets-webpack-plugin postcss-loader postcss-preset-env purify-css purifycss-webpack vue-loader vue-template-compiler vue-style-loader --save-dev
+
+cnpm install @babel/polyfill @babel/runtime lib-flexible vue vue-router vuex --save
+
+cnpm install sass-loader node-sass --save-dev
+

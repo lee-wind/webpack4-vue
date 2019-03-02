@@ -1,0 +1,327 @@
+.block{
+  display: block;
+}
+.inline-block{
+  display: inline-block;
+}
+.inline{
+  display: inline;
+}
+.none{
+  display: none;
+}
+.relative{
+  position: relative;
+}
+@mixin top-left{
+  top: 0;
+  left: 0;
+}
+@mixin top-center{
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@mixin top-right{
+  top: 0;
+  right: 0;
+}
+@mixin center-left{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin center{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+@mixin center-right{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin bottom-left{
+  bottom: 0;
+  left: 0;
+}
+@mixin bottom-center{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@mixin bottom-right{
+  bottom: 0;
+  right: 0;
+}
+/*相对定位*/
+.absolute{
+  position: absolute;
+}
+.absolute-top-left{
+  position: absolute;
+  @include top-left;
+}
+.absolute-top-center{
+  position: absolute;
+  @include top-center;
+}
+.absolute-top-right{
+  position: absolute;
+  @include top-right;
+}
+.absolute-center{
+  position: absolute;
+  @include center;
+}
+.absolute-center-left{
+  position: absolute;
+  @include center-left;
+}
+.absolute-center-right{
+  position: absolute;
+  @include center-right;
+}
+.absolute-bottom-left{
+  position: absolute;
+  @include bottom-left;
+}
+.absolute-bottom-center{
+  position: absolute;
+  @include bottom-center;
+}
+.absolute-bottom-right{
+  position: absolute;
+  @include bottom-right;
+}
+/*固定定位*/
+.fixed{
+  position: fixed;
+}
+.fixed-top-left{
+  position: fixed;
+  @include top-left;
+}
+.fixed-top-center{
+  position: fixed;
+  @include top-center;
+}
+.fixed-top-right{
+  position: fixed;
+  @include top-right;
+}
+.fixed-center{
+  position: fixed;
+  @include center;
+}
+.fixed-center-left{
+  position: fixed;
+  @include center-left;
+}
+.fixed-center-right{
+  position: fixed;
+  @include center-right;
+}
+.fixed-bottom-left{
+  position: fixed;
+  @include bottom-left;
+}
+.fixed-bottom-center{
+  position: fixed;
+  @include bottom-center;
+}
+.fixed-bottom-right{
+  position: fixed;
+  @include bottom-right;
+}
+/*弹性布局*/
+.flex{
+  display: flex;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-direction-column{
+  flex-direction: column;
+}
+.flex-direction-row{
+  flex-direction: row;
+}
+.flex-top-left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.flex-top-center{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.flex-top-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.flex-top-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.flex-top-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.flex-top-evenly{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center-left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-center-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-center-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-center-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-center-evenly{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.flex-bottom-left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.flex-bottom-center{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.flex-bottom-right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.flex-bottom-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.flex-bottom-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.flex-bottom-evenly{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.flex-vertical-top{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.flex-vertical-center{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.flex-vertical-bottom{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+.flex-vertical-between{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.flex-vertical-around{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+.flex-vertical-evenly{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+.text-justify{
+  text-align: justify;
+}
+.overflow-auto{
+  overflow: auto;
+}
+.clearfix:after{
+  display: block;
+  content: '';
+  height: 0;
+  clear: both;
+  zoom: 1;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+.border-none{
+  border: none;
+}
+.pointer{
+  cursor: pointer;
+}
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.vertical-middle{
+  vertical-align: middle;
+}
+.bold{
+  font-weight: bold;
+}
+.normal{
+  font-weight: normal;
+}
+.nowrap{
+  white-space: nowrap;
+}

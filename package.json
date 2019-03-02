@@ -1,0 +1,24 @@
+{
+  "name": "webpack-advance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --config config/webpack.dev.js",
+    "test": "webpack --config config/webpack.test.js",
+    "build": "webpack --config config/webpack.prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
