@@ -58,28 +58,6 @@ module.exports = {
                     'sass-loader',
                 ]
             },
-            {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8192,
-                        name: 'images/[name].[ext]',
-                        publicPath: '../'
-                    }
-                }
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8192,
-                        name: 'fonts/[name].[ext]',
-                        publicPath: "../"
-                    }
-                }
-            },
         ],
     },
     plugins: [
@@ -87,7 +65,7 @@ module.exports = {
             filename: 'css/[name].[contenthash].css',
         }),
         new PurifyCSSPlugin({
-            paths: glob.sync(path.join(__dirname, '../src/*.html'))
+            paths: glob.sync(path.join(__dirname, '../index.html'))
         })
     ]
 };

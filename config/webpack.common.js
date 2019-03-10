@@ -1,13 +1,12 @@
 const path = require('path');
-const fs = require('fs');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
-const MyPlugin = require('../plugins/myPlugin')
 
 module.exports = {
     entry: {
-        app: './src/main.js',
+        app: '../src/main.js',
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -16,13 +15,32 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        name: 'images/[name].[ext]',
+                    }
+                }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        name: 'fonts/[name].[ext]',
+                    }
+                }
+            },
+            {
                 test: /\.(html)$/,
                 use: {
                     loader: 'html-loader',
                     options: {
                         attrs: ['img:src', 'img:data-src', 'audio:src'],
                         // minimize: true
-                        publicPath: './'
                     }
                 }
             }
@@ -40,42 +58,22 @@ module.exports = {
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
-        ...getNewHtmlWebpackPlugin(),
-        new MyPlugin({
-            paths: ["./configuration/config.js"]
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './index.html'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-        })
+        }),
+        new CopyPlugin([
+            {
+                from: './src/assets/js/flexible.js',
+                to: 'js/flexible.js',
+            }
+        ])
     ]
 };
 
-function getEntries(){
-    const entrys = {};
-    getEntryName().forEach(page => {
-        entrys[page] = `./src/js/${page}.js`
-    });
-    console.log(entrys);
-    return entrys;
-}
 
-function getNewHtmlWebpackPlugin(){
-    const newHtmlWebpackPlugins = [];
-    getEntryName().forEach(page => {
-        newHtmlWebpackPlugins.push(new HtmlWebpackPlugin({
-            filename: `pages/${page}.html`,
-            template: `src/pages/${page}.html`,
-            chunks: [`${page}`, 'vendor', 'common', 'runtime'],
-        }))
-    });
-    return newHtmlWebpackPlugins;
-}
 
-function getEntryName(){
-    const pages = [];
-    fs.readdirSync('./src/pages').forEach(item => {
-        pages.push(item.slice(0, -5));
-    });
-    return pages;
-}

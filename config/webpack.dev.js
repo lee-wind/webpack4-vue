@@ -29,31 +29,11 @@ module.exports = merge(common, {
             {
                 test: /\.(sc|le|c)ss$/,
                 use: [
-                    'style-loader',
+                    'vue-style-loader',
                     'css-loader',
                     'postcss-loader',
                     'sass-loader',
                 ]
-            },
-            {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8192,
-                        name: 'images/[name].[ext]',
-                    }
-                }
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8192,
-                        name: 'fonts/[name].[ext]',
-                    }
-                }
             }
         ],
     },

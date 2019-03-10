@@ -68,19 +68,23 @@
 
     function refreshRem(){
         var width = docEl.getBoundingClientRect().width;
-        if (width / dpr > 540) {
-            width = 540 * dpr;
-        }
+        // if (width / dpr > 540) {
+        //     width = 540 * dpr;
+        // }
         var rem = width / 10;
         docEl.style.fontSize = rem + 'px';
         flexible.rem = win.rem = rem;
     }
 
     win.addEventListener('resize', function() {
+        //refreshRem();
+        console.log('resize');
         clearTimeout(tid);
         tid = setTimeout(refreshRem, 300);
     }, false);
     win.addEventListener('pageshow', function(e) {
+        //refreshRem();
+        console.log('pageshow');
         if (e.persisted) {
             clearTimeout(tid);
             tid = setTimeout(refreshRem, 300);
@@ -95,7 +99,9 @@
         }, false);
     }
 
-
+    // (function(){
+    //     setTimeout(refreshRem, 5000);
+    // })();
     refreshRem();
 
     flexible.dpr = win.dpr = dpr;
