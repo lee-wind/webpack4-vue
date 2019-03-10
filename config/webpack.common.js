@@ -1,19 +1,24 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        app: '../src/main.js',
+        app: './src/main.js',
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: "../"
+        publicPath: "./"
     },
     module: {
         rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: {
@@ -50,22 +55,19 @@ module.exports = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': resolve('src'),
-            Assets: path.resolve(__dirname, '../src/assets/'),
+            '@': path.resolve(__dirname, '../src'),
         },
     },
     plugins: [
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './index.html'
-        }),
+        new HtmlWebpackPlugin(),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
         }),
+        new VueLoaderPlugin(),
         new CopyPlugin([
             {
                 from: './src/assets/js/flexible.js',

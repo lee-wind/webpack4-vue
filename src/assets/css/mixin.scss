@@ -1,0 +1,100 @@
+@mixin top-left{
+  top: 0;
+  left: 0;
+}
+@mixin top-center{
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@mixin top-right{
+  top: 0;
+  right: 0;
+}
+@mixin center-left{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin center{
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+@mixin center-right{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin bottom-left{
+  bottom: 0;
+  left: 0;
+}
+@mixin bottom-center{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@mixin bottom-right{
+  bottom: 0;
+  right: 0;
+}
+
+@mixin absolute-top-left{
+  position: absolute;
+  @include top-left;
+}
+@mixin absolute-top-center{
+  position: absolute;
+  @include top-center;
+}
+@mixin absolute-top-right{
+  position: absolute;
+  @include top-right;
+}
+@mixin absolute-center{
+  position: absolute;
+  @include center;
+}
+@mixin absolute-center-left{
+  position: absolute;
+  @include center-left;
+}
+@mixin absolute-center-right{
+  position: absolute;
+  @include center-right;
+}
+@mixin absolute-bottom-left{
+  position: absolute;
+  @include bottom-left;
+}
+@mixin absolute-bottom-center{
+  position: absolute;
+  @include bottom-center;
+}
+@mixin absolute-bottom-right{
+  position: absolute;
+  @include bottom-right;
+}
+
+@mixin clearfix {
+  zoom: 1;
+  &:after {
+    display: block;
+    content: '';
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+}
+
+@mixin border-radius{
+  border-radius: 5px;
+}
+

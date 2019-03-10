@@ -1,7 +1,7 @@
 npm init -y
 
 npm install webpack webpack-cli style-loader css-loader file-loader url-loader
-html-loader html-webpack-plugin clean-webpack-plugin
+html-loader html-webpack-plugin clean-webpack-plugin@1
 webpack-dev-server webpack-merge mini-css-extract-plugin
 babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime
 babel-plugin-transform-remove-console optimize-css-assets-webpack-plugin
@@ -12,7 +12,7 @@ px2rem-loader copy-webpack-plugin
 
 npm install webpack webpack-cli --save-dev
 
-cnpm install style-loader css-loader file-loader url-loader html-loader html-webpack-plugin clean-webpack-plugin webpack-dev-server webpack-merge mini-css-extract-plugin babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-transform-remove-console optimize-css-assets-webpack-plugin postcss-loader postcss-preset-env purify-css purifycss-webpack vue-loader vue-template-compiler vue-style-loader px2rem-loader copy-webpack-plugin --save-dev
+cnpm install style-loader css-loader file-loader url-loader html-loader html-webpack-plugin clean-webpack-plugin@1 webpack-dev-server webpack-merge mini-css-extract-plugin babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-transform-remove-console optimize-css-assets-webpack-plugin postcss-loader postcss-preset-env purify-css purifycss-webpack vue-loader vue-template-compiler vue-style-loader px2rem-loader copy-webpack-plugin --save-dev
 
 cnpm install @babel/polyfill @babel/runtime lib-flexible vue vue-router vuex --save
 

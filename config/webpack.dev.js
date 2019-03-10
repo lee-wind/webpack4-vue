@@ -7,7 +7,7 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
        // contentBase: '/dist',
-        openPage: 'login.html',
+       //  openPage: 'login.html',
         overlay: true,
         compress: true,
         host: "192.168.0.101",
