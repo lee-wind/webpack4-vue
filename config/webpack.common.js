@@ -4,10 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const Util = require('./util')
 
 module.exports = {
     entry: {
         app: './src/main.js',
+        //app: ['@babel/polyfill', './src/main.js']
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -17,7 +19,11 @@ module.exports = {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                use: [{
+                    loader: 'vue-loader'
+                },
+                Util.px2remInStyleAttrInHtml
+                ]
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -62,20 +68,21 @@ module.exports = {
         new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
         }),
-        new VueLoaderPlugin(),
         new CopyPlugin([
             {
                 from: './src/assets/js/flexible.js',
                 to: 'js/flexible.js',
             }
-        ])
+        ]),
+        new VueLoaderPlugin(),
     ]
 };
-
-
 

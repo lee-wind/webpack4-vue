@@ -1,0 +1,34 @@
+$font-color-black: #000000;
+$font-color-white: #ffffff;
+$font-color-active: #4A90E2;
+$font-color-main: #373737;
+$font-color-label: #4A4A4A;
+$font-size-reset: 0;
+$font-size-small: 12px;
+$font-size-normal: 14px;
+$font-size-large: 16px;
+$font-size-extra-large: 18px;
+$padding: 5px;
+$margin: 15px;
+$border: 1px solid #E5ECEE;
+//$border: 1px solid black;
+$table-border: 1px solid #818181;
+$border-transparent: 1px solid transparent;
+$border-active: 1px solid #4A90E2;
+$border-shallow: 1px solid #E2E8EA;
+$radius: 3px;
+$background-color-white: #ffffff;
+$background-color-active: #4A90E2;
+
+@mixin border-top{
+    border-top: $border; /*no*/
+}
+@mixin border-left{
+    border-left: $border; /*no*/
+}
+@mixin border-bottom{
+    border-bottom: $border; /*no*/
+}
+@mixin border-right{
+    border-right: $border; /*no*/
+}

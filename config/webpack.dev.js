@@ -1,18 +1,19 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const webpack = require('webpack');
+const Util = require('./util')
 
 module.exports = merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-       // contentBase: '/dist',
-       //  openPage: 'login.html',
+       // contentBase: 'dist/index.html',
+        openPage: 'dist/',
         overlay: true,
         compress: true,
-        host: "192.168.0.101",
         // disableHostCheck: true,
-        hot: true
+        hot: true,
+        publicPath: '/dist/'
     },
     output: {
         filename: 'js/[name].js',
@@ -31,6 +32,7 @@ module.exports = merge(common, {
                 use: [
                     'vue-style-loader',
                     'css-loader',
+                    Util.px2remLoader,
                     'postcss-loader',
                     'sass-loader',
                 ]
@@ -38,7 +40,7 @@ module.exports = merge(common, {
         ],
     },
     plugins: [
-        //new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             "SERVER_ENV": JSON.stringify("development")
         })
