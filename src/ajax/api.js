@@ -36,15 +36,3 @@ let post = (code, data) => {
     })
 }
 
-export const authLogin = (oaId) => {
-    return get(500116, {
-        oaId
-    })
-};
-
-export const login = (username, password) => {
-    return post(500118, {
-        username,
-        password
-    })
-};

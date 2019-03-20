@@ -22,7 +22,11 @@ module.exports = merge(common, {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                // exclude: /node_modules/,
+                // exclude: [
+                //     /node_modules/,
+                //     /src\/assets\/js\/flexible.js/
+                // ],
                 use: {
                     loader: 'babel-loader',
                 }

@@ -1,22 +1,24 @@
 <template>
     <div id="home">
-
+        <h1>Home</h1>
     </div>
 </template>
 
 <script>
+    import { baseURL } from "../ajax/axios";
     export default {
         name: "Home",
         data() {
             return {
-                activeIndex: '1',
-                activeIndex2: '1'
+
             };
         },
+        created(){
+            console.log(baseURL);
+            console.log([1, 2, 3].includes(2));
+        },
         methods: {
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            }
+
         }
     }
 </script>

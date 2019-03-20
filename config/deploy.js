@@ -44,7 +44,7 @@ module.exports = {
                     }
                 }
             }),
-            //new OptimizeCSSAssetsPlugin({})
+            new OptimizeCSSAssetsPlugin({})
         ]
     },
     module: {

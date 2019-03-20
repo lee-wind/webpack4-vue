@@ -3,21 +3,17 @@ npm init -y
 npm install webpack webpack-cli style-loader css-loader file-loader url-loader
 html-loader html-webpack-plugin clean-webpack-plugin@1
 webpack-dev-server webpack-merge mini-css-extract-plugin
-babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime
+babel-loader @babel/core@ @babel/preset-env@ @babel/plugin-transform-runtime
 babel-plugin-transform-remove-console @babel/plugin-syntax-dynamic-import
 babel-plugin-inject-polyfills
 optimize-css-assets-webpack-plugin
 postcss-loader postcss-preset-env purify-css purifycss-webpack
 vue-loader vue-template-compiler vue-style-loader axios qs
 px2rem-loader copy-webpack-plugin
-glob-all
+glob-all sass-loader node-sass
 --save-dev
 
-npm install webpack webpack-cli --save-dev
+npm install webpack webpack-cli style-loader css-loader file-loader url-loader html-loader html-webpack-plugin clean-webpack-plugin@1 webpack-dev-server webpack-merge mini-css-extract-plugin babel-loader @babel/core@7.3 @babel/preset-env@7.3 @babel/plugin-transform-runtime@7.3 babel-plugin-transform-remove-console @babel/plugin-syntax-dynamic-import babel-plugin-inject-polyfills optimize-css-assets-webpack-plugin postcss-loader postcss-preset-env purify-css purifycss-webpack vue-loader vue-template-compiler vue-style-loader px2rem-loader copy-webpack-plugin glob-all sass-loader node-sass --save-dev
 
-cnpm install style-loader css-loader file-loader url-loader html-loader html-webpack-plugin clean-webpack-plugin@1 webpack-dev-server webpack-merge mini-css-extract-plugin babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime babel-plugin-transform-remove-console @babel/plugin-syntax-dynamic-import babel-plugin-inject-polyfills optimize-css-assets-webpack-plugin postcss-loader postcss-preset-env purify-css purifycss-webpack vue-loader vue-template-compiler vue-style-loader px2rem-loader copy-webpack-plugin glob-all --save-dev
-
-cnpm install @babel/polyfill @babel/runtime lib-flexible vue vue-router vuex axios qs element-ui --save
-
-cnpm install sass-loader node-sass --save-dev
+npm install @babel/polyfill @babel/runtime@7.3 lib-flexible vue vue-router vuex axios qs element-ui --save
 

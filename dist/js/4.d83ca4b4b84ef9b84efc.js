@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{85:function(e,t,n){"use strict";n.r(t);var c=function(){var e=this.$createElement;return(this._self._c||e)("div",{attrs:{id:"home"}})};c._withStripped=!0;var i={name:"Home",data:function(){return{activeIndex:"1",activeIndex2:"1"}},methods:{handleSelect:function(e,t){}}},o=n(36),a=Object(o.a)(i,c,[],!1,null,"8dc7cce2",null);a.options.__file="src/components/Home.vue";t.default=a.exports}}]);
-//# sourceMappingURL=4.d83ca4b4b84ef9b84efc.js.map

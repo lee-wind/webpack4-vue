@@ -3,25 +3,12 @@
         [
             "@babel/preset-env",
             {
-                "useBuiltIns": "usage",
-                "exclude": [
-                    "es6.array.iterator",
-                    "es6.promise"
-                ]
+                "useBuiltIns": "usage"
             }
         ]
     ],
     "plugins": [
         "@babel/plugin-transform-runtime",
-        "@babel/plugin-syntax-dynamic-import",
-        [
-            "babel-plugin-inject-polyfills",
-            {
-                "polyfills": [
-                    "es6.array.iterator",
-                    "es6.promise"
-                ]
-            }
-        ]
+        "@babel/plugin-syntax-dynamic-import"
     ]
 }

@@ -76,12 +76,12 @@ module.exports = {
             $: 'jquery',
             jQuery: 'jquery',
         }),
-        new CopyPlugin([
-            {
-                from: './src/assets/js/flexible.js',
-                to: 'js/flexible.js',
-            }
-        ]),
+        // new CopyPlugin([
+        //     {
+        //         from: './src/assets/js/flexible.js',
+        //         to: 'js/flexible.js',
+        //     }
+        // ]),
         new VueLoaderPlugin(),
     ]
 };
